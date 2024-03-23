@@ -1,0 +1,59 @@
+
+
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}
+  <title>Identificador de signos</title>
+{% endblock %}
+
+{% block css %}
+  <!-- <link rel="stylesheet" type="text/css" href="../../styles.css"> -->
+{% endblock %}
+
+{% block body %}
+  <main id="main-tag">
+  <h2>Identificador de Signo</h2>
+  <hr class="mb">
+  <div id="sign-img-container"><img id="sign-img" src=""></div>
+
+  <section>
+    <div class="apply-flex cover mt mother-el-section-1st">
+      <form action="{% url 'index' %}" method="post">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit">Enviar</button>
+  </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="apply-flex cover mt mother-el-section-2nd">
+      {% if db|length != 0 %}
+      <table>
+        <thead>
+          <tr>
+            <th>Aniversário</th>
+            <th>Idade em dias</th>
+            <th>Signo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ birthday }}</td>
+            <td>{{ age_in_days }}</td>
+            <!-- django context variable from SignFormView, passed on to "scripts" js file -->
+            <td id="sign">{{ person_sign }}</td>
+          </tr>
+        </tbody>
+      </table>
+      {% else %}
+      <div>Banco de dados vazio. Adicione um aniversário!</div>
+      {% endif %}
+    </div>
+  </section>
+
+</main>
+  <!-- <script type="text/javascript" src="../../static/js/django_sign_identifier_app_index_scripts.js"></script> -->
+  <script src="{% static 'js/scripts.js' %}" type="text/javascript"></script>
+{% endblock %}

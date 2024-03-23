@@ -1,0 +1,11 @@
+# Arquivos e diretórios do ambiente virtual
+venv/
+*.pyc
+
+# Arquivos de configuração local (exemplo: settings.py com configurações sensíveis)
+/local_settings.py
+
+# Arquivos gerados pelo Django
+*.sqlite3
+__pycache__
+*.py[cod]

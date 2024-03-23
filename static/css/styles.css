@@ -1,0 +1,95 @@
+
+
+body {
+    background-image: linear-gradient(45deg, yellow, mediumseagreen, purple);
+    min-height: 100vh;
+    font-family: consolas;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+}
+
+label {
+    font-size: 2rem;
+    display: none;
+}
+
+h2 {
+    letter-spacing: 3px;
+    color: ivory;
+    text-shadow: 0 0 10px yellowgreen;
+}
+
+hr {
+    height: .1rem;
+    width: 50%;
+    background-color: ivory;
+    box-shadow: 0 0 10px yellowgreen;
+    border-radius: 1rem;
+}
+
+td {
+    color: black;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px black;
+    font-weight: bold;
+}
+
+table th, table td {
+    border: black solid 1px;
+    padding: 1rem;
+}
+
+.apply-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover {
+    padding: 2rem;
+    border: black solid 1px;
+    box-shadow: 0 0 10px 0 black;
+    border-radius: .2rem;
+}
+
+.mb {
+    margin: 0 0 1.5rem 0;
+}
+
+.mt {
+    margin: 1.5rem 0 0 0;
+}
+
+/* Não criado manualmente, mas pelo Django, add via {{ form }} ao template "index.html" */
+#id_birthday {
+    background-color: black;
+    outline: none;
+    padding: 1rem;
+    border: ivory solid 2px;
+    color: yellowgreen;
+    font-size: .9rem;
+}
+
+#sign-img-container {
+    animation: borderChange infinite 5s;
+}
+
+#sign-img {
+    height: 150px;
+    width: 150px;
+}
+
+@keyframes borderChange {
+    20% {transform: translateX(0px);}
+    40% {transform: translateX(20px);}
+    60% {transform: translateX(0px);}
+    80% {transform: translateX(-20px);}
+    100% {transform: translateX(0px);}
+}
